@@ -8,11 +8,9 @@
 body {
   background: #C3C3C3;
   color: #ABA8B2;
-  border: 1px solid white;
 }
 
 header {
-  border: 1px solid orange;
   height: 4em;
   width: 100%;
 }
@@ -25,6 +23,7 @@ nav {
   background-color: #4C4B63;
   height: 5em;
   text-align: center;
+  left: 0;
   position: fixed;
   top: 0;
   z-index: 4;
@@ -33,13 +32,13 @@ nav {
 ul li {
   float: right;
   display: inline;
-  margin-right: 4em;
+  margin-right: 2em;
   margin-top: 1em;
 }
 
 ul li:hover {
   cursor: auto;
-  border-bottom: 3px solid #4C4B63;
+  border-bottom: 3px solid #ABA8B2;
 }
 
 #showcase {
@@ -65,10 +64,10 @@ ul li:hover {
 
 main {
   height: 30em;
-  background-color: #949396;
+  background-color: #C3C3C3;
   border: 1px solid pink;
   text-align: center;
-  color: #C3C3C3;
+  color: #4C436B;
 }
 
 .wrapper {
@@ -76,12 +75,25 @@ main {
   top: 90%;
   width: 100%;
   min-height: 12%;
+  left: 0;
   z-index: 2;
+}
+
+.aboutc {
+  display: flex;
 }
 
 .aboutc div {
   display: inline-block;
   width: 19em;
   border: 1px solid green;
-  height: 15em;
+  margin: 0.5em;
+  margin-left: 1em;
+  height: 14em;
 }
+
+/*@media (max-width: 620px) {
+  ul li {
+    display: block;
+  }
+}*/
