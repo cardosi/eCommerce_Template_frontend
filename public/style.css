@@ -54,11 +54,11 @@ ul li:hover {
 }
 
 #showcase h2 {
-  border: 2px solid #C3C3C3;
+  border: 2px solid ivory;
   font-size: 4em;
   margin-top: 4em;
   margin-left: 1em;
-  color: #C3C3C3;
+  color: ivory;
   width: 85%;
 }
 
@@ -74,6 +74,7 @@ main {
   position: absolute;
   top: 90%;
   width: 100%;
+  height: 85em;
   min-height: 12%;
   left: 0;
   z-index: 2;
@@ -86,10 +87,18 @@ main {
 .aboutc div {
   display: inline-block;
   width: 19em;
-  border: 1px solid green;
   margin: 0.5em;
   margin-left: 1em;
-  height: 14em;
+  height: 11em;
+}
+
+.wrapper2 {
+  position: relative;
+  top: 90%;
+  width: 100%;
+  min-height: 12%;
+  left: 0;
+  z-index: 2;
 }
 
 /*@media (max-width: 620px) {
