@@ -7,5 +7,5 @@ app.use(express.static('public'));
 
 
 app.listen(port, function() {
-  console.log('Well hey there');
+  console.log('Well hey there from port: ', port);
 });
