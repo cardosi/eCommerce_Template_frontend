@@ -24,6 +24,20 @@
     </header>
     <div id="showcase">
       <h2>Invest in Your Business</h2>
+      <div>
+        <h3>Create User</h3>
+        <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.User.user_name" placeholder="User Name">
+          <input type="text" ng-model="ctrl.User.password" placeholder="Password">
+          <input type="submit"/>
+        </form>
+        <h3>Log In</h3>
+        <form ng-submit="ctrl.login()">
+          <input type="text" ng-model="ctrl.userData.user_name" placeholder="User Name">
+          <input type="text" ng-model="ctrl.userData.password" placeholder="Password">
+          <input type="submit"/>
+        </form>
+      </div>
     </div>
     <main class="wrapper">
       <h1>About Our Company</h1>
@@ -53,15 +67,5 @@
         <div id="map"></div>
       </section>
     </main>
-<<<<<<< HEAD
-=======
-    <section>
-      <h1>What's New</h1>
-      <p>ldfjslfj slfslf sdfsfslj lslfjsflsj sl ak</p>
-    </section>
->>>>>>> 94005b374775770b416e74b9016c8c0281b3ac3d
-
-
-
   </body>
 </html>
