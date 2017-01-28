@@ -18,6 +18,8 @@
     <header>
       <nav>
         <ul>
+          <li>LOG IN</li>
+          <li>CREATE</li>
           <li>CART</li>
           <li>ACCOUNT</li>
           <li>PRODUCTS</li>
@@ -43,6 +45,19 @@
           <h3>What to Expect From Us</h3>
           <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
         </div>
+        <div>
+          <h3>Create User</h3>
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" ng-model="ctrl.User.user_name" placeholder="User Name">
+            <input type="text" ng-model="ctrl.User.password" placeholder="Password">
+            <input type="submit"/>
+          </form>
+          <h3>Log In</h3>
+          <form ng-submit="ctrl.login()">
+            <input type="text" ng-model="ctrl.userData.user_name" placeholder="User Name">
+            <input type="text" ng-model="ctrl.userData.password" placeholder="Password">
+            <input type="submit"/>
+          </form>
       </div>
     </main>
     <section>
