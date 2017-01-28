@@ -8,11 +8,9 @@
 body {
   background: #C3C3C3;
   color: #ABA8B2;
-  border: 1px solid white;
 }
 
 header {
-  border: 1px solid orange;
   height: 4em;
   width: 100%;
 }
@@ -25,6 +23,7 @@ nav {
   background-color: #4C4B63;
   height: 5em;
   text-align: center;
+  left: 0;
   position: fixed;
   top: 0;
   z-index: 4;
@@ -33,20 +32,19 @@ nav {
 ul li {
   float: right;
   display: inline;
-  margin-right: 4em;
+  margin-right: 2em;
   margin-top: 1em;
 }
 
 ul li:hover {
   cursor: auto;
-  border-bottom: 3px solid #4C4B63;
+  border-bottom: 3px solid #ABA8B2;
 }
 
 #showcase {
   height: 38em;
   text-align: center;
   width: 100%;
-  border: 1px solid red;
   background-color: #5386E4;
   top: 0;
   left: 0;
@@ -55,33 +53,80 @@ ul li:hover {
 }
 
 #showcase h2 {
-  border: 2px solid #C3C3C3;
+  border: 2px solid ivory;
   font-size: 4em;
   margin-top: 4em;
   margin-left: 1em;
-  color: #C3C3C3;
+  color: ivory;
   width: 85%;
 }
 
 main {
-  height: 30em;
-  background-color: #949396;
-  border: 1px solid pink;
+  height: 40em;
+  background-color: #C3C3C3;
   text-align: center;
-  color: #C3C3C3;
+  color: #4C436B;
 }
 
 .wrapper {
   position: absolute;
-  top: 90%;
+  top: 98%;
   width: 100%;
+  height: 52em;
   min-height: 12%;
+  left: 0;
   z-index: 2;
+}
+
+.aboutc {
+  display: flex;
+  height: 24em;
 }
 
 .aboutc div {
   display: inline-block;
   width: 19em;
-  border: 1px solid green;
-  height: 15em;
+  margin: 0.5em;
+  margin-left: 1em;
+  height: 14em;
 }
+
+.wrapper2 {
+  background: #5386E4;
+  position: relative;
+  width: 100%;
+  height: 30em;
+  min-height: 12%;
+  left: 0;
+  z-index: 2;
+}
+
+.wrapper2 h1 {
+  padding: 2em;
+}
+
+.wrapper2 img {
+  margin: 3em;
+  border-radius: 25%;
+  box-shadow: 5px 5px 8px #4C4B63;
+}
+
+.wrapper3 {
+  border: 1px solid black;
+  height: 35em;
+  background: #C3C3C3;
+  top: 0;
+}
+
+#map {
+  width: 85%;
+  height: 5em;
+}
+
+/*@media (max-width: 620px) {
+  ul li {
+    display: block;
+  }
+}*/
+
+/*I got my inspiration for this layout from http://purecss.io/layouts/ with their landing page design.*/

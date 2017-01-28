@@ -10,16 +10,11 @@
     <title>Ecommerce Template</title>
   </head>
   <body ng-controller="mainController as ctrl">
-
-    {{ctrl.message}}
-
-
-
     <header>
       <nav>
         <ul>
           <li>LOG IN</li>
-          <li>CREATE</li>
+          <li>REGISTER</li>
           <li>CART</li>
           <li>ACCOUNT</li>
           <li>PRODUCTS</li>
@@ -29,6 +24,20 @@
     </header>
     <div id="showcase">
       <h2>Invest in Your Business</h2>
+      <div>
+        <h3>Create User</h3>
+        <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.User.user_name" placeholder="User Name">
+          <input type="text" ng-model="ctrl.User.password" placeholder="Password">
+          <input type="submit"/>
+        </form>
+        <h3>Log In</h3>
+        <form ng-submit="ctrl.login()">
+          <input type="text" ng-model="ctrl.userData.user_name" placeholder="User Name">
+          <input type="text" ng-model="ctrl.userData.password" placeholder="Password">
+          <input type="submit"/>
+        </form>
+      </div>
     </div>
     <main class="wrapper">
       <h1>About Our Company</h1>
@@ -45,27 +54,18 @@
           <h3>What to Expect From Us</h3>
           <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
         </div>
-        <div>
-          <h3>Create User</h3>
-          <form ng-submit="ctrl.createUser()">
-            <input type="text" ng-model="ctrl.User.user_name" placeholder="User Name">
-            <input type="text" ng-model="ctrl.User.password" placeholder="Password">
-            <input type="submit"/>
-          </form>
-          <h3>Log In</h3>
-          <form ng-submit="ctrl.login()">
-            <input type="text" ng-model="ctrl.userData.user_name" placeholder="User Name">
-            <input type="text" ng-model="ctrl.userData.password" placeholder="Password">
-            <input type="submit"/>
-          </form>
       </div>
+      <section class="wrapper2">
+        <h1>What's New</h1>
+        <p>ldfjslfj slfslf sdfsfslj lslfjsflsj sl ak</p>
+        <img src="http://orig02.deviantart.net/2548/f/2013/224/c/f/world_of_warcraft_200x200_by_dragoanasazi-d6hu54l.png">
+        <img src="https://s1-ssl.dmcdn.net/PasMX/200x200-LYM.jpg">
+        <img src="http://n.lavillonniere.free.fr/dl/avatars/kirby/200.png">
+      </section>
+      <section class="wrapper3">
+        <h1>Where We're Located</h1>
+        <div id="map"></div>
+      </section>
     </main>
-    <section>
-      <h1>What's New</h1>
-      <p>ldfjslfj slfslf sdfsfslj lslfjsflsj sl ak</p>
-    </section>
-
-
-
   </body>
 </html>
