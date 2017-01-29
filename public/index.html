@@ -24,22 +24,14 @@
     </header>
     <div id="showcase">
       <h2>Invest in Your Business</h2>
-      <div>
-        <h3>Create User</h3>
-        <form ng-submit="ctrl.createUser()">
-          <input type="text" ng-model="ctrl.User.user_name" placeholder="User Name">
-          <input type="text" ng-model="ctrl.User.password" placeholder="Password">
-          <input type="submit"/>
-        </form>
-        <h3>Log In</h3>
-        <form ng-submit="ctrl.login()">
-          <input type="text" ng-model="ctrl.userData.user_name" placeholder="User Name">
-          <input type="text" ng-model="ctrl.userData.password" placeholder="Password">
-          <input type="submit"/>
-        </form>
-      </div>
     </div>
     <main class="wrapper">
+      <section class="wrapper1">
+        <h3>Products</h3>
+        <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
+          <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
+        </div>
+      </section>
       <h1>About Our Company</h1>
       <div class="aboutc">
         <div>
