@@ -37,4 +37,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'controller2',
     controllerAs: 'ctrl2'
   });
+
+  $routeProvider.when('/cart/:id', {
+    templateUrl: 'partials/partial3.html',
+    controller: 'controller3',
+    controllerAs: 'ctrl3'
+  });
 }]);
