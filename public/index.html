@@ -3,22 +3,26 @@
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
-    <link rel="stylesheet" href="style.css" charset="utf-8">
+    <!-- <script type="text/ng-template" src='partials/partial1.html'> -->
+    <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" charset="utf-8">
     <title>Ecommerce Template</title>
   </head>
   <body ng-controller="mainController as ctrl">
     <header>
       <nav>
-        <ul>
-          <li>LOG IN</li>
-          <li>REGISTER</li>
-          <li>CART</li>
-          <li>ACCOUNT</li>
-          <li>PRODUCTS</li>
-          <li>ABOUT</li>
+        <ul class="nav">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/logIn">LOG IN</a></li>
+          <li><a href="/register">REGISTER<a/></li>
+          <li><a href="/cart/id">CART</a></li>
+          <li><a href="/account/id">ACCOUNT</a></li>
+          <li><a href="/products/id">PRODUCTS</a></li>
+          <li><a href="/info">ABOUT</a></li>
         </ul>
       </nav>
     </header>
@@ -29,12 +33,19 @@
       <section class="wrapper1">
         <h3>Products</h3>
         <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
+<<<<<<< HEAD
           <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
           <small>${{product.price}}</small><br/>
           <img class="cartImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
           <p>{{product.description}}</p>
+=======
+          <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
+          <small> {{ product.description }} </small>
+          <p>${{ product.price }} </p>
+>>>>>>> 837c5020eff029d7cb73843b321a5fa0fe696074
         </div>
       </section>
+      <section class="wrapper2">
       <h1>About Our Company</h1>
       <div class="aboutc">
         <div>
@@ -50,13 +61,14 @@
           <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
         </div>
       </div>
-      <section class="wrapper2">
+    </section>
+      <!-- <section class="wrapper3">
         <h1>What's New</h1>
         <p>ldfjslfj slfslf sdfsfslj lslfjsflsj sl ak</p>
         <img src="http://orig02.deviantart.net/2548/f/2013/224/c/f/world_of_warcraft_200x200_by_dragoanasazi-d6hu54l.png">
         <img src="https://s1-ssl.dmcdn.net/PasMX/200x200-LYM.jpg">
         <img src="http://n.lavillonniere.free.fr/dl/avatars/kirby/200.png">
-      </section>
+      </section> -->
       <section class="wrapper3">
         <h1>Where We're Located</h1>
         <div id="map"></div>
