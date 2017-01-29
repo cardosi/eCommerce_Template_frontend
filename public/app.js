@@ -31,4 +31,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'mainController',
     controllerAs: 'ctrl'
   });
+
+  $routeProvider.when('/register', {
+    templateUrl: 'partials/partial2.html',
+    controller: 'controller2',
+    controllerAs: 'ctrl2'
+  });
 }]);
