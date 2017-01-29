@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
+    <!-- <script type="text/ng-template" src='partials/partial1.html'> -->
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="style.css" charset="utf-8">
@@ -32,7 +33,7 @@
       <section class="wrapper1">
         <h3>Products</h3>
         <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
-          <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
+          <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
           <small> {{ product.description }} </small>
           <p>${{ product.price }} </p>
         </div>
