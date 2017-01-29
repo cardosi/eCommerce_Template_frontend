@@ -49,4 +49,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'controller4'
     controllerAs: 'ctrl4'
   });
+
+  $routeProvider.when('/products/:id' {
+    templateUrl: 'partials/partial5.html',
+    controller: 'controller5',
+    controllerAs: 'ctrl5'
+  });
 }]);
