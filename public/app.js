@@ -20,6 +20,7 @@ app.controller('mainController', ['$http', function($http) {
 
 
 
+
 }]);
 
 app.controller('controller1', function() {
@@ -36,6 +37,7 @@ app.controller('controller3', ['$routeParams', function($routeParams) {
 
 app.controller('controller4', ['$routeParams', function($routeParams) {
   this.id = $routeParams.id;
+
 }]);
 
 app.controller('controller5', ['$routeParams', function($routeParams) {
