@@ -29,11 +29,17 @@ nav {
   z-index: 4;
 }
 
-ul li {
+.nav li {
   float: right;
   display: inline;
   margin-right: 2em;
   margin-top: 1em;
+
+}
+
+.nav li a {
+  color: #ABA8B2;
+  text-decoration: none;
 }
 
 ul li:hover {
