@@ -30,6 +30,9 @@
         <h3>Products</h3>
         <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
           <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
+          <small>${{product.price}}</small><br/>
+          <img class="cartImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
+          <p>{{product.description}}</p>
         </div>
       </section>
       <h1>About Our Company</h1>
