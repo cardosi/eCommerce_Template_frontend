@@ -55,4 +55,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'controller5',
     controllerAs: 'ctrl5'
   });
+
+  $routeProvider.when('/info' {
+    templateUrl: 'partials/partial6',
+    controller: 'controller6',
+    controllerAs: 'ctrl6'
+  });
 }]);
