@@ -43,4 +43,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'controller3',
     controllerAs: 'ctrl3'
   });
+
+  $routeProvider.when('/account/:id' {
+    templateUrl: 'partials/partial4.html',
+    controller: 'controller4'
+    controllerAs: 'ctrl4'
+  });
 }]);
