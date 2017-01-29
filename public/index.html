@@ -6,12 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
+    <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="style.css" charset="utf-8">
-    <base href="/">
     <title>Ecommerce Template</title>
   </head>
-  <body ng-controller="mainController as ctrl">
+  <body ng-view ng-controller="mainController as ctrl">
     <header>
       <nav>
         <ul class="nav">

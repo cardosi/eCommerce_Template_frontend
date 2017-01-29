@@ -1,5 +1,6 @@
 
-var app = angular.module('ecommerceStore', []);
+var app = angular.module('ecommerceStore', ['ngRoute']);
+
 
 app.controller('mainController', ['$http', function($http) {
   this.message = "connected!"
@@ -19,4 +20,15 @@ app.controller('mainController', ['$http', function($http) {
 
 
 
+}]);
+
+
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $locationProvider.html5mode({ enabled: true });
+
+  $routeProvider.when('/logIn', {
+    templateUrl: 'partials/partial1.html',
+    controller: 'mainController',
+    controllerAs: 'ctrl'
+  });
 }]);
