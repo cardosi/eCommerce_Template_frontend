@@ -22,14 +22,38 @@ app.controller('mainController', ['$http', function($http) {
 
 }]);
 
+app.controller('controller1', function() {
+
+});
+
+app.controller('controller2', function() {
+
+});
+
+app.controller('controller3', ['$routeParams', function($routeParams) {
+  this.id = $routeParams.id;
+}]);
+
+app.controller('controller4', ['$routeParams', function($routeParams) {
+  this.id = $routeParams.id;
+}]);
+
+app.controller('controller5', ['$routeParams', function($routeParams) {
+  this.id = $routeParams.id;
+}]);
+
+app.controller('controller6', function() {
+
+});
+
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5mode({ enabled: true });
 
   $routeProvider.when('/logIn', {
     templateUrl: 'partials/partial1.html',
-    controller: 'mainController',
-    controllerAs: 'ctrl'
+    controller: 'controller1',
+    controllerAs: 'ctrl1'
   });
 
   $routeProvider.when('/register', {
@@ -44,21 +68,24 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controllerAs: 'ctrl3'
   });
 
-  $routeProvider.when('/account/:id' {
+  $routeProvider.when('/account/:id', {
     templateUrl: 'partials/partial4.html',
-    controller: 'controller4'
+    controller: 'controller4',
     controllerAs: 'ctrl4'
   });
 
-  $routeProvider.when('/products/:id' {
+  $routeProvider.when('/products/:id', {
     templateUrl: 'partials/partial5.html',
     controller: 'controller5',
     controllerAs: 'ctrl5'
   });
 
-  $routeProvider.when('/info' {
+  $routeProvider.when('/info', {
     templateUrl: 'partials/partial6',
     controller: 'controller6',
     controllerAs: 'ctrl6'
+  });
+  $routeProvider.otherwise({
+    redirectTo: '/'
   });
 }]);
