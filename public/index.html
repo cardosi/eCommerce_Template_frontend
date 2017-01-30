@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/js/app.js"></script>
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" charset="utf-8">
     <title>Ecommerce Template</title>
   </head>
@@ -21,12 +22,12 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
           <li><a href="/cart/id">CART</a></li>
           <li><a href="/account/id">ACCOUNT</a></li>
           <li><a href="/products/id">PRODUCTS</a></li>
           <li><a href="/info">ABOUT</a></li>
+          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
+          <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
         </ul>
       </nav>
     </header>
@@ -35,39 +36,22 @@
       <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header flex-column">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h3>Register!</h3>
+            </div>
               <div class="modal-body">
-                <div class="md-form">
-                  <input type="text" id="form1" class="form-control">
-                  <label for="form1">Your username</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form2" class="form-control">
-                  <label for="form2">Your password</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form4" class="form-control">
-                  <label for="form4">Your name</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form5" class="form-control">
-                  <label for="form5">Your address</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form6" class="form-control">
-                  <label for="form6">Your city</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form7" class="form-control">
-                  <label for="form7">Your state</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form8" class="form-control">
-                  <label for="form8">Your zip</label>
+                <div class="form-group">
+                  <input type="text" id="form1" class="form-control" placeholder="username">
+                  <input type="password" id="form2" class="form-control" placeholder="password">
+                  <input type="text" id="form3" class="form-control" placeholder="email">
+                  <input type="text" id="form4" class="form-control" placeholder="name">
+                  <input type="password" id="form5" class="form-control" placeholder="addresss">
+                  <input type="text" id="form6" class="form-control" placeholder="city">
+                  <input type="password" id="form7" class="form-control" placeholder="state">
+                  <input type="password" id="form8" class="form-control"placeholder="zip">
                 </div>
                 <div class="text-center">
                   <button class="btn btn-primary btn-lg">Sign up</button>
@@ -80,7 +64,7 @@
     </div>
 </div>
       <!-- log-in modal -->
-<div class="modal fade modal-ext" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true" data-backdrop="false">
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true" data-backdrop="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -91,12 +75,10 @@
       </div>
         <div class="modal-body">
           <div class="md-form">
-            <input type="text" id="form2" class="form-control">
-            <label for="form2">Your email</label>
+            <input type="text" id="form2" class="form-control" placeholder="email">
           </div>
             <div class="md-form">
-              <input type="password" id="form3" class="form-control">
-              <label for="form3">Your password</label>
+              <input type="password" id="form3" class="form-control" placeholder="password">
             </div>
             <div class="text-center">
               <button class="btn btn-primary btn-lg">Login</button>

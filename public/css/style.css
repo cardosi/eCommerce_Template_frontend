@@ -26,29 +26,30 @@ nav {
   left: 0;
   position: fixed;
   top: 0;
-  z-index: 4;
+  z-index: 3;
 }
 
 .nav li {
   float: right;
   display: inline;
-  margin-right: 2em;
+  margin-right: 1em;
   margin-top: 1em;
-
 }
 
 .nav li a {
   color: #ABA8B2;
   text-decoration: none;
+  font-family: 'Sansita', sans-serif;
 }
 
-ul li:hover {
-  cursor: auto;
-  border-bottom: 3px solid #ABA8B2;
+.nav li a:hover {
+  background-color: inherit;
+  cursor: crosshair;
+  border-bottom: 2px solid #ABA8B2;
 }
 
 #showcase {
-  height: 38em;
+  height: 48em;
   text-align: center;
   width: 100%;
   background-color: #5386E4;
@@ -61,13 +62,27 @@ ul li:hover {
 #showcase h2 {
   border: 2px solid ivory;
   font-size: 4em;
+  padding: 1em;
   margin-top: 4em;
   margin-left: 1em;
   color: ivory;
   width: 85%;
 }
 
+#showcase input {
+  font-family: 'Sansita', sans-serif;
+}
 
+#regModal {
+  margin-top: 4em;
+}
+
+#regModal .form-control {
+}
+
+#logModal {
+  margin-top: 4em;
+}
 
 main {
   height: 40em;
