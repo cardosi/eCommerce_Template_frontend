@@ -2,7 +2,7 @@
 <html ng-app="ecommerceStore">
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -13,20 +13,21 @@
     <script type="text/javascript" src="/js/app.js"></script>
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" charset="utf-8">
     <title>Ecommerce Template</title>
   </head>
-  <body ng-controller="mainController as ctrl">
+  <body ng-view ng-controller="mainController as ctrl">
     <header>
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
           <li><a href="/cart/id">CART</a></li>
           <li><a href="/account/id">ACCOUNT</a></li>
           <li><a href="/products/id">PRODUCTS</a></li>
           <li><a href="/info">ABOUT</a></li>
+          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
+          <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
         </ul>
       </nav>
     </header>
@@ -35,78 +36,90 @@
       <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header flex-column">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h3>Register!</h3>
+            </div>
               <div class="modal-body">
-                <div class="md-form">
-                  <input type="text" id="form1" class="form-control">
-                  <label for="form1">Your username</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form2" class="form-control">
-                  <label for="form2">Your password</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form4" class="form-control">
-                  <label for="form4">Your name</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form5" class="form-control">
-                  <label for="form5">Your address</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form6" class="form-control">
-                  <label for="form6">Your city</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form7" class="form-control">
-                  <label for="form7">Your state</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form8" class="form-control">
-                  <label for="form8">Your zip</label>
+                <div class="form-group">
+                  <input type="text" id="form1" class="form-control" placeholder="username">
+                  <input type="password" id="form2" class="form-control" placeholder="password">
+                  <input type="text" id="form3" class="form-control" placeholder="email">
+                  <input type="text" id="form4" class="form-control" placeholder="name">
+                  <input type="password" id="form5" class="form-control" placeholder="addresss">
+                  <input type="text" id="form6" class="form-control" placeholder="city">
+                  <input type="password" id="form7" class="form-control" placeholder="state">
+                  <input type="password" id="form8" class="form-control"placeholder="zip">
                 </div>
                 <div class="text-center">
                   <button class="btn btn-primary btn-lg">Sign up</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-      <!-- log-in modal -->
-<div class="modal fade modal-ext" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h3>Login</h3>
-      </div>
-        <div class="modal-body">
-          <div class="md-form">
-            <input type="text" id="form2" class="form-control">
-            <label for="form2">Your email</label>
-          </div>
-            <div class="md-form">
-              <input type="password" id="form3" class="form-control">
-              <label for="form3">Your password</label>
-            </div>
-            <div class="text-center">
-              <button class="btn btn-primary btn-lg">Login</button>
-            </div>
-          </div>
-            <div class="modal-footer">
-              <div class="options text-right">
               </div>
+              <div class="modal-footer">
                 <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
+              </div>
             </div>
+          </div>
+        </div>
+      <!-- log-in modal -->
+        <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel" aria-hidden="true" data-backdrop="false">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h3>Login</h3>
+              </div>
+              <div class="modal-body">
+                <div class="md-form">
+                  <input type="text" id="form2" class="form-control" placeholder="email">
+                </div>
+                <div class="md-form">
+                  <input type="password" id="form3" class="form-control" placeholder="password">
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary btn-lg">Login</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="options text-right"></div>
+                <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Invest in Your Business</h2>
+      </div>
+      <main class="wrapper">
+        <section class="wrapper1">
+          <h1>Products</h1>
+          <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
+            <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
+            <p> {{ product.description }} </p>
+            <small>${{ product.price }} </small>
+          </div>
+        </section>
+        <section class="wrapper2">
+          <h1>About Our Company</h1>
+            <div class="aboutc">
+            <div class="content">
+              <h3>Our Mission</h3>
+              <p>blah blah blah blah blah blah lsfjslfjs lkj sldf lsajdfslfj l fsf sfsfs fsjflsjf slkfjdfjsfgsf sdjasfsfs sf sjf sjfsfj fjs s sj sjsfsdf sfjs sdf  shashs kshf shshsdfhskf hsfsf sh shgs fhsfhs hsfksjhfs khfsd fhsf hsdf shfsd hsf hsdfs h fsdkfh sfkhs sfh sfhsjf hsf khs sdjh sdkf hsf khsfsdkjh sdf hsf jdsfksdhsdkjh</p>
+            </div>
+            <div class="content">
+              <h3>A Little About Us</h3>
+              <p>fldkfj slfjs slkkfjsf jlajfsdfs sjflsjfsfj sfljlksj fsfj sdj slfkjgljsflsj sfjsjsflsj fslfjsfjs fsjfsfjs l</p>
+            </div>
+            <div class="content">
+              <h3>What to Expect From Us</h3>
+              <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
+            </div>
+
+          </div>
+        </section>
         </div>
     </div>
 </div>
@@ -149,10 +162,10 @@
         <img src="https://s1-ssl.dmcdn.net/PasMX/200x200-LYM.jpg">
         <img src="http://n.lavillonniere.free.fr/dl/avatars/kirby/200.png">
       </section> -->
-      <section class="wrapper3">
-        <h1>Where We're Located</h1>
-        <div id="map"></div>
-      </section>
-    </main>
-  </body>
-</html>
+        <section class="wrapper3">
+          <h1>Where We're Located</h1>
+          <div id="map"></div>
+        </section>
+      </main>
+    </body>
+  </html>
