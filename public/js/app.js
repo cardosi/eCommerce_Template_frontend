@@ -14,7 +14,7 @@ app.controller('mainController', ['$http', function($http) {
   }).then(
     function(response){
       this.products = response.data;
-      console.log(this.products);
+      console.log(response);
       this.productsloaded = true;
     }.bind(this));
 
