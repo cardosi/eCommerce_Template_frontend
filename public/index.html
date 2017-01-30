@@ -33,16 +33,13 @@
       <section class="wrapper1">
         <h3>Products</h3>
         <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
-<<<<<<< HEAD
           <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
           <small>${{product.price}}</small><br/>
           <img class="cartImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
           <p>{{product.description}}</p>
-=======
           <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
           <small> {{ product.description }} </small>
           <p>${{ product.price }} </p>
->>>>>>> 837c5020eff029d7cb73843b321a5fa0fe696074
         </div>
       </section>
       <section class="wrapper2">
