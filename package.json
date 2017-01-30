@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cardosi/eCommerce_Template_frontend#readme",
   "dependencies": {
+    "angular-modal-service": "^0.10.1",
     "bcrypt": "^1.0.2",
     "express": "^4.14.0",
     "nodemon": "^1.11.0"
