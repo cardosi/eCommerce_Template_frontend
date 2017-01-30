@@ -1,5 +1,5 @@
 
-var app = angular.module('ecommerceStore', ['ngRoute']);
+var app = angular.module('ecommerceStore', []);
 
 
 app.controller('mainController', ['$http', function($http) {
