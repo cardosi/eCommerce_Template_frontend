@@ -1,32 +1,32 @@
 (function(){
   angular.module('ecommerceStore', ['ui.router']).config(AuthRouter);
 
-  function AuthRouter($stateProvider, $urlRouterProvider) {
+  function AuthRouter($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise("/index");
+    $urlRouterProvider.otherwise("/");
 
     $stateProvider
     .state('home', {
       url: '/',
       params: {
-        user:null
+        user: null
       }
     })
     .state('cart', {
-      url: '/cart/id', //might need to grab user id or auth variable here
+      url: '/cart/:user_id',
       templateUrl: '/partials/cart.html',
     })
     .state('account', {
-      url: '/account/id', //again might need to involve user verification
+      url: '/account/:user_id/edit',
       templateUrl: '/partials/account.html',
     })
     .state('allProducts', {
       url: '/products',
       templateUrl: '/partials/products_all.html',
     })
-    .state('productsShow', {
-      url: '/product/id',
-      templateUrl: 'partials/single_product.html'
+    .state('oneProduct', {
+      url: '/product/:product_id',
+      templateUrl: '/partials/single_product.html',
     })
   }
 })()
