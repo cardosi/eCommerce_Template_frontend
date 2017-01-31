@@ -1,10 +1,10 @@
 var express = require('express'),
-    app = express();,
-    router = require('angular-ui-router')
+    path = require('path'),
+    app = express();
 
 var port = 3001 || process.env.PORT;
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 
 
 app.listen(port, function() {

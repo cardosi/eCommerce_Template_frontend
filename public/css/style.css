@@ -155,6 +155,7 @@ main {
 .wrapper2 h1 {
   font-family: 'Sansita', sans-serif;
   font-weight: 600;
+  margin-top: 2em;
 }
 
 .wrapper2 img {
