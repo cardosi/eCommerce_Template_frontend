@@ -1,5 +1,6 @@
 var express = require('express'),
-    app = express();
+    app = express();,
+    router = require('angular-ui-router')
 
 var port = 3001 || process.env.PORT;
 

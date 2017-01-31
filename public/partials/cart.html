@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="ecommerceStore">
+  <head>
+    <meta charset="utf-8">
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/cart.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+    <title></title>
+  </head>
+  <body ng-controller="mainController as main">
+    <header>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/account/id">ACCOUNT</a></li>
+          <li><a href="/products">CONTINUE SHOPPING</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="cartItems">
+      <h1>Items currently in your cart...</h1>
+      <div class="cart" ng-repeat="item in main.items">
+        <div>
+          <img src="{{ item.img }}"/>
+          <p>Price: {{ item.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+          <div class="edit">
+            <button class="btn btn-info" ui-sref="addQty({item: quantity})">Add</button>
+            <button class="btn btn-info" ng-click="main.deleteItem(item.id)">Delete Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
