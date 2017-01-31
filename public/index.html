@@ -10,6 +10,7 @@
     crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="/js/router.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
@@ -17,25 +18,22 @@
     <link rel="stylesheet" href="/css/style.css" charset="utf-8">
     <title>Ecommerce Template</title>
   </head>
-  <body ng-view ng-controller="mainController as ctrl">
+  <body ng-controller="mainController as ctrl">
     <header>
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-
+          <li><a ui-sref="cart">CART</a></li>
+          <li><a ui-sref="account">ACCOUNT</a></li>
+          <li><a ui-sref="allProducts">PRODUCTS</a></li>
+          <li><a href="#jump_to_about">ABOUT</a></li>
           <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
           <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
           <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
-          <li><a href="/cart/id">CART</a></li>
-          <li><a href="/account/id">ACCOUNT</a></li>
-          <li><a href="/products">PRODUCTS</a></li>
-          <li><a href="/info">ABOUT</a></li>
-          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
         </ul>
       </nav>
     </header>
-    <div id="showcase">
+    <div ui-view id="showcase">
     <!-- register modal -->
       <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog" role="document">
@@ -127,17 +125,16 @@
         </div>
         <h2>Invest in Your Business</h2>
       </div>
-
       <main class="wrapper">
-        <!-- <section class="wrapper1">
+        <section class="wrapper1">
           <h1>Products</h1>
           <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products">
             <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
             <p> {{ product.description }} </p>
             <small>${{ product.price }} </small>
           </div>
-        </section> -->
-        <section class="wrapper2">
+        </section>
+        <a id="jump_to_about"><section class="wrapper2"></a>
           <h1>About Our Company</h1>
             <div class="aboutc">
             <div class="content">
