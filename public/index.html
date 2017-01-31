@@ -22,13 +22,12 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-
           <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
           <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
           <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
           <li><a href="/cart/id">CART</a></li>
           <li><a href="/account/id">ACCOUNT</a></li>
-          <li><a href="/products">PRODUCTS</a></li>
+          <li><a href="/products/id">PRODUCTS</a></li>
           <li><a href="/info">ABOUT</a></li>
           <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
           <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
@@ -152,8 +151,51 @@
               <h3>What to Expect From Us</h3>
               <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
             </div>
+
           </div>
         </section>
+        </div>
+    </div>
+</div>
+      <h2>Invest in Your Business</h2>
+    </div>
+    <main class="wrapper">
+      <section class="wrapper1">
+        <h3>Products</h3>
+        <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products | limitTo : 4">
+          <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
+          <small>${{product.price}}</small><br/>
+          <img class="cartImg" ng-click="ctrl.createTrans(product.id)" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
+          <p>{{product.description}}</p>
+          <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
+          <small> {{ product.description }} </small>
+          <p>${{ product.price }} </p>
+        </div>
+      </section>
+      <section class="wrapper2">
+      <h1>About Our Company</h1>
+      <div class="aboutc">
+        <div>
+          <h3>Our Mission</h3>
+          <p>blah blah blah blah blah blah lsfjslfjs lkj sldf lsajdfslfj l</p>
+        </div>
+        <div>
+          <h3>A Little About Us</h3>
+          <p>fldkfj slfjs slkkfjsf jlajfsdfs sjflsjfsfj sfljlksj fsfj sdj slfkjgljsflsj sfjsjsflsj fslfjsfjs fsjfsfjs l</p>
+        </div>
+        <div>
+          <h3>What to Expect From Us</h3>
+          <p>sfsdl lkfssdfgj skfks sfkjsfgsa f sf sf s gadsfsd d g dg sdf sdfsdf dg gd a sf sa fw dsfsdfsdfsdf  sfsd fs sf sf!</p>
+        </div>
+      </div>
+    </section>
+      <!-- <section class="wrapper3">
+        <h1>What's New</h1>
+        <p>ldfjslfj slfslf sdfsfslj lslfjsflsj sl ak</p>
+        <img src="http://orig02.deviantart.net/2548/f/2013/224/c/f/world_of_warcraft_200x200_by_dragoanasazi-d6hu54l.png">
+        <img src="https://s1-ssl.dmcdn.net/PasMX/200x200-LYM.jpg">
+        <img src="http://n.lavillonniere.free.fr/dl/avatars/kirby/200.png">
+      </section> -->
         <section class="wrapper3">
           <h1>Where We're Located</h1>
           <div id="map"></div>
