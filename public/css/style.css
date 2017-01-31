@@ -101,7 +101,6 @@ main {
   z-index: 2;
 }
 
-
 .wrapper1 {
   background: #C3C3C3;
   position: relative;
@@ -128,12 +127,10 @@ main {
   margin: 2em;
 }
 
-
 .cartImg {
   width: 40px;
   height: auto;
 }
-
 
 .wrapper1 .product .productImg {
   height: 11em;
