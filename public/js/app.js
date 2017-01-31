@@ -8,6 +8,7 @@ app.controller('mainController', ['$http', function($http) {
   this.productsloaded = false;
   this.url = 'http://localhost:3000';
   this.loggedIn = false;
+  this.user = {};
 
 //CALL TO GET PRODUCTS - This should run on page load
   $http({
@@ -15,7 +16,7 @@ app.controller('mainController', ['$http', function($http) {
     url: 'http://localhost:3000/products'
   }).then(
     function(response){
-      this.products = response.data;
+      this.products = response.data.products;
       console.log(response);
       this.productsloaded = true;
     }.bind(this));
@@ -23,14 +24,13 @@ app.controller('mainController', ['$http', function($http) {
 //CALL TO LOG IN - adds token to localStorage and changes Log In button in nav
   this.login = function(userPass) {
     console.log(userPass)
-    
-
     $http({
       method: 'POST',
       url: this.url + '/users/login',
       data: {user: {username: userPass.username, password: userPass.password}},
     }).then(function(response){
       console.log(response);
+      this.user = response.data.user;
       this.loggedIn = true;
       this.userNow = response.data.user.username;
       localStorage.setItem('token', JSON.stringify(response.data.token));
@@ -44,8 +44,7 @@ app.controller('mainController', ['$http', function($http) {
     localStorage.removeItem('token');
     this.loggedIn = false;
     this.userNow = undefined;
-    userPass.username = '';
-    userPass.password = '';
+    this.user = {};
   }
 
   this.register = function(regForm){
@@ -63,6 +62,27 @@ app.controller('mainController', ['$http', function($http) {
       }.bind(this)
     );
   }
+
+//CREATE TRANSACTION CALL
+  this.createTrans = function(product_id){
+    console.log('Creating Trans');
+    console.log(product_id);
+    console.log(this.user.id);
+    $http({
+      method: 'POST',
+      url: this.url + '/transactions',
+      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))},
+      data: {transaction: {user_id: this.user.id, product_id: product_id}}
+    }).then(
+      function(response){
+        console.log(response);
+      }.bind(this)
+    );
+  }
+
+
+
+//ADD PRODUCT TO TRANSACTION CALL
 
 
 
