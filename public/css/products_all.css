@@ -50,9 +50,8 @@ nav {
   border-bottom: 2px solid #ABA8B2;
 }
 
-.form-control {
-  width: 60%;
-  margin-left: 18%;
+form {
+  margin-top: 2em;
 }
 
 button {
