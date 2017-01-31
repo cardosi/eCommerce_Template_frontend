@@ -21,7 +21,8 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
+          <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
+          <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
           <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
           <li><a href="/cart/id">CART</a></li>
           <li><a href="/account/id">ACCOUNT</a></li>
@@ -41,37 +42,43 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="md-form">
-                  <input type="text" id="form1" class="form-control">
-                  <label for="form1">Your username</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form2" class="form-control">
-                  <label for="form2">Your password</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form4" class="form-control">
-                  <label for="form4">Your name</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form5" class="form-control">
-                  <label for="form5">Your address</label>
-                </div>
-                <div class="md-form">
-                  <input type="text" id="form6" class="form-control">
-                  <label for="form6">Your city</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form7" class="form-control">
-                  <label for="form7">Your state</label>
-                </div>
-                <div class="md-form">
-                  <input type="password" id="form8" class="form-control">
-                  <label for="form8">Your zip</label>
-                </div>
-                <div class="text-center">
-                  <button class="btn btn-primary btn-lg">Sign up</button>
-                </div>
+                <form ng-submit="ctrl.register(regForm)">
+                  <div class="md-form">
+                    <input ng-model="regForm.username" type="text" id="form1" class="form-control">
+                    <label for="form1">Your username</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.password" type="password" id="form2" class="form-control">
+                    <label for="form2">Your password</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.name" type="text" id="form4" class="form-control">
+                    <label for="form4">Your name</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.email" type="text" id="form4" class="form-control">
+                    <label for="form4">Your Email</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.address" type="text" id="form5" class="form-control">
+                    <label for="form5">Your address</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.city" type="text" id="form6" class="form-control">
+                    <label for="form6">Your city</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.state" type="text" id="form7" class="form-control">
+                    <label for="form7">Your state</label>
+                  </div>
+                  <div class="md-form">
+                    <input ng-model="regForm.zip" type="text" id="form8" class="form-control">
+                    <label for="form8">Your zip</label>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-primary btn-lg">Sign up</button>
+                  </div>
+              </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">Close</button>
@@ -90,17 +97,19 @@
         <h3>Login</h3>
       </div>
         <div class="modal-body">
-          <div class="md-form">
-            <input type="text" id="form2" class="form-control">
-            <label for="form2">Your email</label>
-          </div>
+          <form ng-submit="ctrl.login(userPass)">
             <div class="md-form">
-              <input type="password" id="form3" class="form-control">
-              <label for="form3">Your password</label>
+              <input ng-model="userPass.username" type="text" id="form2" class="form-control">
+              <label for="form2">Your User Name</label>
             </div>
-            <div class="text-center">
-              <button class="btn btn-primary btn-lg">Login</button>
-            </div>
+              <div class="md-form">
+                <input ng-model="userPass.password" type="password" id="form3" class="form-control">
+                <label for="form3">Your password</label>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+              </div>
+            </form>
           </div>
             <div class="modal-footer">
               <div class="options text-right">
