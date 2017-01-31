@@ -127,15 +127,12 @@
           </div>
           <main class="wrapper">
             <section class="wrapper1">
-              <h1>Products</h1>
+              <h1>Featured Products</h1>
               <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products | limitTo : 4">
-                <img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt="">
+                <a ui-sref="oneProduct"><img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
                 <small>${{product.price}}</small><br/>
                 <img class="cartImg" ng-click="ctrl.createTrans(product.id)" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
                 <p>{{product.description}}</p>
-                <a href="products/id"><img src="{{product.img}}" class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
-                <small> {{ product.description }} </small>
-                <p>${{ product.price }} </p>
               </div>
             </section>
             <a id="jump_to_about"><section class="wrapper2"></a>

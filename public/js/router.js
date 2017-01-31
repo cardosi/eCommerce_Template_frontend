@@ -18,6 +18,9 @@
     })
     .state('account', {
       url: '/account/:user_id/edit',
+      params: {
+        user: null
+      },
       templateUrl: '/partials/account.html',
     })
     .state('allProducts', {
