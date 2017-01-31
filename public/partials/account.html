@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="ecommerceStore">
+  <head>
+    <meta charset="utf-8">
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/account.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+    <title></title>
+  </head>
+  <body ng-controller="mainController as main">
+    <header>
+      <nav>
+        <ul class="nav">
+          <li><a href="/">HOME</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Account Information</h1>
+      <div class="form-group">
+        <form class="form-group" ng-submit="main.editUser($state.params.user)"action="#">
+          <div>
+            <label for="username">Username</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.username">
+          </div>
+          <div>
+            <label for="password_digest">Password</label>
+            <input type="password" class="form-control" ng-model="$state.params.user.password_digest">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.email">
+          </div>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.name">
+          </div>
+          <div>
+            <label for="address">Address</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.address">
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.city">
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.state">
+          </div>
+          <div>
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" ng-model="$state.params.user.zip">
+          </div>
+          <button class="btn btn-info" type="submit">Edit Account Info.</button>
+        </form>
+      </div>
+  </body>
+</html>
