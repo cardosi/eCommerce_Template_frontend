@@ -76,11 +76,24 @@ app.controller('mainController', ['$http', function($http) {
     }).then(
       function(response){
         console.log(response);
+        this.currentTrans = response.data.id
       }.bind(this)
     );
   }
 
-
+//SHOW TRANSACTION CALL
+  this.showTrans = function(){
+    console.log(this.currentTrans)
+    $http({
+      method: 'GET',
+      url: this.url + '/transactions/' + this.currentTrans,
+      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
+    }).then(
+      function(response){
+        console.log(response);
+      }
+    )
+  }
 
 //ADD PRODUCT TO TRANSACTION CALL
 
