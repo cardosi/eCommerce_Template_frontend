@@ -3,6 +3,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Satisfy', cursive;
+  text-align: center;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
 header {
   height: 4em;
   width: 100%;
+  margin-bottom: 6em;
 }
 
 header nav {
@@ -46,4 +48,8 @@ nav {
   background-color: inherit;
   cursor: crosshair;
   border-bottom: 2px solid #ABA8B2;
+}
+
+button {
+  background-color: #5386E4 !important;
 }
