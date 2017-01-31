@@ -18,24 +18,12 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-          <li><a href="/account/id">ACCOUNT</a></li>
-          <li><a href="/products">CONTINUE SHOPPING</a></li>
         </ul>
       </nav>
     </header>
-    <div class="cartItems">
-      <h1>Items currently in your cart...</h1>
-      <div class="cart" ng-repeat="item in main.items">
-        <div>
-          <img src="{{ item.img }}"/>
-          <p>Price: {{ item.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
-          <div class="edit">
-            <button class="btn btn-info" ui-sref="addQty({item: quantity})">Add</button>
-            <button class="btn btn-info" ng-click="main.deleteItem(item.id)">Delete Item</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <main ng-show="main.user">
+      <h1>Account Information</h1>
+
+
   </body>
 </html>
