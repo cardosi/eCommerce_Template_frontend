@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
     <title></title>
   </head>
-  <body ng-controller="mainController as main">
+  <body>
     <header>
       <nav>
         <ul class="nav">
@@ -26,6 +26,7 @@
     </header>
     <main>
       <h1>Account Information</h1>
+      <h4>for {{aCtrl.name}}</h4>
       <div class="form-group">
         <form class="form-group" ng-submit="main.editUser($state.params.user)"action="#">
           <div>
