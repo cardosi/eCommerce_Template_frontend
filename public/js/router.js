@@ -1,7 +1,7 @@
 (function(){
-  angular.module('ecommerceStore', ['ui.router']).config(AuthRouter);
+  angular.module('ecommerceStore', ['ui.router']).config(ViewRouter);
 
-  function AuthRouter($stateProvider, $urlRouterProvider){
+  function ViewRouter($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise("/");
 
