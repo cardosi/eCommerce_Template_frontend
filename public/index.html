@@ -23,25 +23,13 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-<<<<<<< HEAD
-          <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
-          <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
-          <li><a href="/cart/id">CART</a></li>
-          <li><a href="/account/id">ACCOUNT</a></li>
-          <li><a href="/products/id">PRODUCTS</a></li>
-          <li><a href="/info">ABOUT</a></li>
-          <li data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
-=======
           <li><a ui-sref="cart">CART</a></li>
           <li><a ui-sref="account">ACCOUNT</a></li>
           <li><a ui-sref="allProducts">PRODUCTS</a></li>
           <li><a href="#jump_to_about">ABOUT</a></li>
           <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
           <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
-          <li data-toggle='modal' data-target='#regModal'><a>REGISTER<a/></li>
->>>>>>> bc1839bcb9fe33ee0e703436d97c72bfb7314e94
+          <li data-toggle='modal' data-target='#regModal'><a>REGISTER</a></li>
         </ul>
       </nav>
     </header>
