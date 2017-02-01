@@ -93,7 +93,7 @@ app.controller('mainController', ['$http', function($http) {
       method: 'PATCH',
       url: this.url + '/transactions/' + this.currentTrans,
       headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))},
-      data: {transaction: {add_user_id: this.user.id, add_product_id: product_id}}
+      data: {transaction: {user_id: this.user.id, product_id: product_id}}
     }).then(
       function(response){
         console.log(response);
