@@ -295,10 +295,47 @@ app.controller('mainController', ['$http', function($http) {
 
 
 
+}]);
+
+
+app.controller('cCtrl', function() {
+  this.id = $routeParams.id;
+});
+
+app.controller('aCtrl', function() {
+  this.id = $routeParams.id;
+});
+
+app.controller('pCtrl', function() {
+
+});
 
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode({ enabled: true });
-}]);
 
+  $routeProvider.when('/cart/:id', {
+    redirectTo: '/partials/cart.html',
+    templateUrl: 'partials/cart.html',
+    controller: 'cCtrl',
+    controllerAs: 'cart'
+  });
+  $routeProvider.when('/account/:id', {
+    redirectTo: '/partials/account.html',
+    templateUrl: 'partials/account.html',
+    controller: 'aCtrl',
+    controllerAs: 'account'
+  });
+  $routeProvider.when('/products_all', {
+    redirectTo: '/partials/products_all.html',
+    templateUrl: 'partials/products_all.html',
+    controller: 'pCtrl',
+    controllerAs: 'products'
+  });
+  $routeProvider.when('/single_product', {
+    redirectTo: '/partials/single_product.html',
+    templateUrl: 'partials/single_product.html',
+    controller: 'sPCtrl',
+    controllerAs: 'product'
+  });
 }]);

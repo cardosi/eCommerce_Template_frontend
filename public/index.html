@@ -23,9 +23,9 @@
       <nav>
         <ul class="nav">
           <li><a href="/">HOME</a></li>
-          <li><a ui-sref="cart">CART</a></li>
-          <li><a ui-sref="account">ACCOUNT</a></li>
-          <li><a ui-sref="allProducts">PRODUCTS</a></li>
+          <li><a href="/cart/:id">CART</a></li>
+          <li><a href="/account/:id">ACCOUNT</a></li>
+          <li><a href="/products_all">PRODUCTS</a></li>
           <li><a href="#jump_to_about">ABOUT</a></li>
           <li ng-if="ctrl.loggedIn == false" data-toggle='modal' data-target='#logModal'><a>LOG IN</a></li>
           <li ng-if="ctrl.loggedIn" ng-click="ctrl.logOut()">LOG OUT<br/>{{ctrl.userNow}}</li>
@@ -129,7 +129,7 @@
             <section class="wrapper1">
               <h1>Featured Products</h1>
               <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products | limitTo : 4">
-                <a ui-sref="oneProduct"><img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
+                <a href="/single_product"><img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
                 <small>${{product.price}}</small><br/>
                 <img class="cartImg" ng-click="ctrl.createTrans(product.id)" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
                 <p>{{product.description}}</p>
