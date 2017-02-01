@@ -1,5 +1,5 @@
 (function(){
-  angular.module('ecommerceStore', ['ui.router']).config(ViewRouter);
+  angular.module('routerApp', ['ui.router']).config(ViewRouter);
 
   function ViewRouter($stateProvider, $urlRouterProvider){
 

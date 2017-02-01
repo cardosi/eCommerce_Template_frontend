@@ -9,6 +9,8 @@ app.controller('mainController', ['$http', function($http) {
   this.url = 'http://localhost:3000';
   this.loggedIn = false;
   this.user = {};
+  this.viewCart = false;
+  this.cartMade = false;
 
 //CALL TO GET PRODUCTS - This should run on page load
   $http({
@@ -72,22 +74,26 @@ app.controller('mainController', ['$http', function($http) {
       method: 'POST',
       url: this.url + '/transactions',
       headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))},
-      data: {transaction: {user_id: this.user.id, product_id: product_id}}
+      data: {transaction: {user_id: this.user.id, product_id: product_id, paid: false, processed: false}}
     }).then(
       function(response){
         console.log(response);
         this.currentTrans = response.data.id
+        this.cartMade = true;
       }.bind(this)
     );
   }
 
-//SHOW TRANSACTION CALL
-  this.showTrans = function(){
-    console.log(this.currentTrans)
+//ADD PRODUCT TO TRANSACTION CALL
+  this.addProduct = function(product_id){
+    console.log('adding product');
+    console.log(this.currentTrans);
+    console.log(product_id);
     $http({
-      method: 'GET',
+      method: 'PATCH',
       url: this.url + '/transactions/' + this.currentTrans,
-      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
+      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))},
+      data: {transaction: {add_user_id: this.user.id, add_product_id: product_id}}
     }).then(
       function(response){
         console.log(response);
@@ -95,7 +101,34 @@ app.controller('mainController', ['$http', function($http) {
     )
   }
 
-//ADD PRODUCT TO TRANSACTION CALL
+//TOGGLE CREATE TRANSACTION & UPDATE TRANSACTION
+  this.toggleTrans = function(product_id){
+    if(this.cartMade){
+      this.addProduct(product_id);
+    }
+    else{
+      this.createTrans(product_id);
+    }
+  }
+
+//SHOW TRANSACTION CALL
+  this.showTrans = function(){
+    console.log(this.currentTrans)
+    this.viewCart = true;
+    $http({
+      method: 'GET',
+      url: this.url + '/transactions/' + this.currentTrans,
+      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
+    }).then(
+      function(response){
+        console.log(response);
+        this.cartProduct = response.data.product;
+        this.cartUser = response.data.user;
+
+      }.bind(this)
+    )
+  }
+
 
 
 

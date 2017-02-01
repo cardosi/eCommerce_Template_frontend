@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="/css/style.css" charset="utf-8">
     <title>Ecommerce Template</title>
   </head>
-  <body ng-controller="mainController as ctrl">
+  <body ng-app="routerApp" ng-controller="mainController as ctrl">
     <header>
       <nav>
         <ul class="nav">
@@ -125,10 +126,7 @@
             </div>
             <h2>Invest in Your Business</h2>
           </div>
-<<<<<<< HEAD
-        </div>
-        <h2>Invest in Your Business</h2>
-      </div>
+
       <main class="wrapper">
         <section class="wrapper1">
           <h1>Products</h1>
@@ -164,7 +162,7 @@
               <div class="product" ng-if="ctrl.productsloaded" ng-repeat="product in ctrl.products | limitTo : 4">
                 <a ui-sref="oneProduct"><img class="productImg" src="https://d30y9cdsu7xlg0.cloudfront.net/png/683139-200.png" alt=""></a>
                 <small>${{product.price}}</small><br/>
-                <img class="cartImg" ng-click="ctrl.createTrans(product.id)" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
+                <img class="cartImg" ng-click="ctrl.toggleTrans(product.id)" src="https://d30y9cdsu7xlg0.cloudfront.net/png/700391-200.png" alt="">
                 <p>{{product.description}}</p>
               </div>
             </section>
@@ -190,6 +188,12 @@
               <div id="map"></div>
               <div ui-view></div>
             </section>
+            <button ng-click="ctrl.showTrans()" type="button" name="button">Cart</button>
+            <div ng-if="ctrl.viewCart">
+              <h4>Cart for {{ctrl.cartUser.username}}</h4>
+              <p>Product: {{ctrl.cartProduct.id}} - Price: ${{ctrl.cartProduct.price}}</p>
+
+            </div>
           </main>
         </body>
         </html>
